@@ -1,4 +1,4 @@
-# VinylHub – ASP.NET Web Application for Vinyl Sales
+# VinylVibe – ASP.NET Web Application for Vinyl Sales
 
 ## Overview
 
