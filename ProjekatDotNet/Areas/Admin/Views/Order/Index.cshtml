@@ -1,0 +1,87 @@
+﻿@{
+    var status = Context.Request.Query["status"];   
+    var inprocess = "text-primary";
+    var completed = "text-primary";
+    var approved = "text-primary";
+    var cancelled = "text-primary";
+    var all = "text-primary";
+
+    switch (status)
+    {
+        case "inprocess":
+            inprocess = "active text-light bg-primary";
+            break;
+        case "completed":
+            completed = "active text-light bg-primary";
+            break;
+        case "approved":
+            approved = "active text-light bg-primary";
+            break;
+        case "cancelled":
+            cancelled= "active text-light bg-primary";
+            break;
+        default:
+            all = "active text-light bg-primary";
+            break;
+    }
+
+}
+
+
+
+<div class="container mt-4">
+    <div class="row align-items-center mb-3">
+        <div class="col-md-6">
+            <h2 class="text-primary fw-bold">Order List</h2>
+        </div>
+       
+    </div>
+
+    <div class="card shadow-lg">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between pb-5 pt-2">
+                <span></span>
+                <ul class="list-group list-group-horizontal-sm">
+                    <a style="text-decoration:none" asp-controller="Order" asp-action="Index" asp-route-status="inprocess">
+                        <li class="list-group-item @inprocess">In proccess</li>
+                    </a>                   
+                    <a style="text-decoration:none" asp-controller="Order" asp-action="Index" asp-route-status="completed">
+                        <li class="list-group-item @completed">Completed</li>
+                    </a>                    
+                    <a style="text-decoration:none" asp-controller="Order" asp-action="Index" asp-route-status="approved">
+                    <li class="list-group-item @approved">Approved</li>
+                    </a>
+                    <a style="text-decoration:none" asp-controller="Order" asp-action="Index" asp-route-status="cancelled">
+                    <li class="list-group-item @cancelled">Cancelled</li>
+                    </a>
+                    <a style="text-decoration:none" asp-controller="Order" asp-action="Index" asp-route-status="all">
+                    <li class="list-group-item @all">All</li>
+                    </a>
+
+
+                </ul>
+            </div>
+            <table id="tblOrder" class="table table-hover text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Phone Number</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <script src="~/js/order.js?v=@DateTime.Now.Ticks"></script>
+}
+
+

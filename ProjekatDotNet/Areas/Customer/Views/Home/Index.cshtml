@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Product>
+
+<div class="container py-4">
+    <div class="row">
+
+       
+        <div class="col-md-3">
+            <div class="p-3 bg-dark rounded">
+                <h5 class="text-light opacity-75">Filter by Genre</h5>
+                <form asp-controller="Home" asp-action="Index" method="get">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="selectedGenre" value="" checked />
+                        <label class="form-check-label text-light">All Genres</label>
+                    </div>
+                    @foreach (var genre in ViewBag.Genres as List<string>)
+
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="selectedGenre" value="@genre"
+                            @(ViewBag.SelectedGenre == genre ? "checked" : "") />
+                            <label class="form-check-label text-light">@genre</label>
+                        </div>
+                    }
+                    <button type="submit" class="btn btn-primary btn-sm mt-3 w-100">Apply Filter</button>
+                </form>
+            </div>
+        </div>
+
+       
+        <div class="col-md-9">
+
+       
+            <div class="text-center mb-4">
+                <img src="~/images/vinylvibe.png" alt="Vinyl Vibe" class="img-fluid" style="max-width: 220px;" />
+            </div>
+
+           
+            <div class="d-flex justify-content-center mb-4">
+                <form asp-controller="Home" asp-action="Index" method="get" class="w-75">
+                    <div class="input-group shadow-sm">
+                        <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control rounded-start" placeholder="Search albums..." />
+                        <button type="submit" class="btn btn-primary">🔍</button>
+                    </div>
+                </form>
+            </div>
+
+           
+            @if (!Model.Any())
+            {
+                <div class="text-center text-light opacity-75">
+                    <h4>No albums found.</h4>
+                </div>
+            }
+            else
+            {
+                <div class="row g-4">
+                    @foreach (var product in Model.OrderByDescending(u=>u.Year))
+                    {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm rounded h-100 d-flex flex-column bg-dark text-light">
+                                <img src="@product.ImageUrl" class="card-img-top rounded-top" />
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="text-uppercase text-center text-warning">@product.Title</h6>
+                                    <p class="text-center text-light opacity-75">@product.Genre.Name</p>
+                                    <p class="text-center mb-1">@product.Artist</p>
+                                    <p class="text-center text-light opacity-75">@product.Year</p>
+                                    <p class="text-center text-muted mb-1">
+                                        <small>Original price: <span class="text-decoration-line-through">@product.ListPrice.ToString("c")</span></small>
+                                    </p>
+                                    <p class="text-center text-success">
+                                        <strong>Lowest price: @product.Price10.ToString("c")</strong>
+                                    </p>
+                                    <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-primary mt-auto">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    @if (ViewBag.CurrentPage > 1)
+
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="?pageNumber=@(ViewBag.CurrentPage - 1)&searchString=@ViewData["CurrentFilter"]&selectedGenre=@ViewBag.SelectedGenre" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    }
+
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+
+                    {
+                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a class="page-link" href="?pageNumber=@i&searchString=@ViewData["CurrentFilter"]&selectedGenre=@ViewBag.SelectedGenre">@i</a>
+                        </li>
+                    }
+
+                    @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="?pageNumber=@(ViewBag.CurrentPage + 1)&searchString=@ViewData["CurrentFilter"]&selectedGenre=@ViewBag.SelectedGenre" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

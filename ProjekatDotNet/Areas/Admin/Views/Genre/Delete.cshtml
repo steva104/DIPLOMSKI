@@ -1,0 +1,30 @@
+﻿@model Genre
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-primary fw-bold mb-3">Delete Genre</h2>
+        <form method="post">
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label fw-bold"></label>
+                <input asp-for="Name" disabled class="form-control" placeholder="Enter genre name" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DisplayOrder" class="form-label fw-bold"></label>
+                <input asp-for="DisplayOrder" disabled class="form-control" placeholder="Enter display order" />
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-danger shadow-sm px-4">Delete Genre</button>
+                <a asp-controller="Genre" asp-action="Index" class="btn btn-outline-secondary shadow-sm px-4">Back To Genres</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

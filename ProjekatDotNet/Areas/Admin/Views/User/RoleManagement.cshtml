@@ -1,0 +1,58 @@
+﻿@model RoleManagementViewModel
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-primary fw-bold mb-3">Manage User Role</h2>
+        <form method="post">
+            <input asp-for="User.Id" hidden />
+            <div asp-validation-summary="All"></div>
+
+            <div class="mb-3">
+                <label asp-for="User.Name" readonly class="form-label fw-bold"></label>
+                <input asp-for="User.Name"  readonly class="form-control" placeholder="Enter genre name" />
+               
+            </div>
+
+            <div class="mb-3">
+                <select asp-for="User.Role" asp-items="@Model.RoleList" class="form-select"></select>
+            </div>
+            @{
+                var visible = "display:none;";
+            }
+            @if (Model.User.Role == Details.Role_Company)
+            {
+                visible = "display:block";
+            }
+            <div class="mb-3">
+                <select asp-for="User.CompanyId" style="@visible" asp-items="@Model.CompanyList" class="form-select"></select>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success shadow-sm px-4">Update Role</button>
+                <a  asp-action="Index" class="btn btn-outline-secondary shadow-sm px-4">Back To Users</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <script>
+        $(document).ready(function () {
+            $('#User_Role').change(function () {
+                var selection = $('#User_Role Option:Selected').text();
+                if(selection=='Company'){
+                    $('#User_CompanyId').show();
+                }
+                else{
+                    $('#User_CompanyId').hide();
+                }
+            })
+
+        })
+
+    </script>
+}
+

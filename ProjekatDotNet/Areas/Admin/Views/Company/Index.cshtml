@@ -1,0 +1,38 @@
+﻿
+<div class="container mt-4">
+    <div class="row align-items-center mb-3">
+        <div class="col-md-6">
+            <h2 class="text-primary fw-bold">Company List</h2>
+        </div>
+        <div class="col-md-6 text-end">
+            <a asp-controller="Company" asp-action="Upsert" class="btn btn-success shadow-sm">
+                <i class="bi bi-plus-circle"></i> Add Company
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-lg">
+        <div class="card-body p-4">
+            <table id="tblCompany" class="table table-hover text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Address</th>
+                        <th class="text-center">City</th>
+                        <th class="text-center">Country</th>
+                        <th class="text-center">Postal Code</th>
+                        <th class="text-center">Phone Number</th>
+                        <th></th>
+                    </tr>
+                </thead>             
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts{
+    <script src="~/js/company.js?v=@DateTime.Now.Ticks"></script>
+}
+

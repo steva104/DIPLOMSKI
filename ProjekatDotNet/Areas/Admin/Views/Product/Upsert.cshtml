@@ -1,0 +1,110 @@
+﻿@model ProductViewModel
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-primary fw-bold mb-3">@(Model.Product.Id!=0 ? "Update": "Create")</h2>
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" ></div>
+            <input asp-for="Product.Id" hidden />
+            <input asp-for="Product.ImageUrl" hidden />
+            <div class="mb-3">
+                <label asp-for="Product.Title" class="form-label fw-bold"></label>
+                <input asp-for="Product.Title" class="form-control" placeholder="Enter album title" />
+                <span asp-validation-for="Product.Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Product.Description" class="form-label fw-bold"></label>
+                <textarea asp-for="Product.Description" class="form-control" placeholder="Enter album description"></textarea>
+                
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.UPC" class="form-label fw-bold"></label>
+                <input asp-for="Product.UPC" class="form-control" placeholder="Enter universal product code" />
+                <span asp-validation-for="Product.UPC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.Artist" class="form-label fw-bold"></label>
+                <input asp-for="Product.Artist" class="form-control" placeholder="Enter artist name" />
+                <span asp-validation-for="Product.Artist" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.Year" class="form-label fw-bold"></label>
+                <input asp-for="Product.Year" class="form-control" placeholder="Enter year of release" />
+                <span asp-validation-for="Product.Year" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.ListPrice" class="form-label fw-bold"></label>
+                <input asp-for="Product.ListPrice" class="form-control" placeholder="Enter list price" />
+                <span asp-validation-for="Product.ListPrice" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.Price" class="form-label fw-bold"></label>
+                <input asp-for="Product.Price" class="form-control" placeholder="Enter price" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.Price5" class="form-label fw-bold"></label>
+                <input asp-for="Product.Price5" class="form-control" placeholder="Enter price for 5+" />
+                <span asp-validation-for="Product.Price5" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.Price10" class="form-label fw-bold"></label>
+                <input asp-for="Product.Price10" class="form-control" placeholder="Enter price for 10+" />
+                <span asp-validation-for="Product.Price10" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.GenreId" class="form-label fw-bold"></label>
+                <select asp-for="Product.GenreId" asp-items="@Model.GenreList" class="form-select">
+                    <option disabled selected>Select Genre</option>
+                </select>
+                <span asp-validation-for="Product.GenreId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.ImageUrl" class="form-label fw-bold"></label>
+                <input type="file" name="file" class="form-control" placeholder="" />               
+            </div>
+            <div class="mb-3">
+                <img src="@Model.Product.ImageUrl" style="max-width: 300px; height: auto; border-radius:4px; border:1px solid" />
+
+            </div>
+            <div class="d-flex justify-content-between">
+                @if (Model.Product.Id != 0)
+                {
+                    <button type="submit" class="btn btn-success shadow-sm px-4">Update Product</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-success shadow-sm px-4">Create Product</button>
+                }
+                <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary shadow-sm px-4">Back To Products</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        tinymce.init({
+          selector: 'textarea',
+          plugins: [
+            // Core editing features
+            'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+            // Your account includes a free trial of TinyMCE premium features
+            // Try the most popular premium features until Feb 24, 2025:
+            
+          ],
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+          tinycomments_mode: 'embedded',
+          tinycomments_author: 'Author name',
+          mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+          ],
+          ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
+        });
+    </script>
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

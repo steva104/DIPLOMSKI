@@ -1,0 +1,17 @@
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.DataAccess.csproj.AssemblyReference.cache
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.DataAccess.AssemblyInfoInputs.cache
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.DataAccess.AssemblyInfo.cs
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.DataAccess.csproj.CoreCompileInputs.cache
+C:\Projekat\Projekat.DataAccess\bin\Debug\net8.0\Projekat.DataAccess.deps.json
+C:\Projekat\Projekat.DataAccess\bin\Debug\net8.0\Projekat.DataAccess.dll
+C:\Projekat\Projekat.DataAccess\bin\Debug\net8.0\Projekat.DataAccess.pdb
+C:\Projekat\Projekat.DataAccess\bin\Debug\net8.0\Projekat.Models.dll
+C:\Projekat\Projekat.DataAccess\bin\Debug\net8.0\Projekat.Utility.dll
+C:\Projekat\Projekat.DataAccess\bin\Debug\net8.0\Projekat.Models.pdb
+C:\Projekat\Projekat.DataAccess\bin\Debug\net8.0\Projekat.Utility.pdb
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.36E012C1.Up2Date
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.DataAccess.dll
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\refint\Projekat.DataAccess.dll
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\Projekat.DataAccess.pdb
+C:\Projekat\Projekat.DataAccess\obj\Debug\net8.0\ref\Projekat.DataAccess.dll

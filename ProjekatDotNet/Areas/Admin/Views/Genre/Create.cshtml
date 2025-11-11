@@ -1,0 +1,33 @@
+﻿@model Genre
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-primary fw-bold mb-3">Create Genre</h2>
+        <form method="post">
+            <div asp-validation-summary="All" ></div>
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label fw-bold"></label>
+                <input asp-for="Name" class="form-control" placeholder="Enter genre name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DisplayOrder" class="form-label fw-bold"></label>
+                <input asp-for="DisplayOrder" class="form-control" placeholder="Enter display order" />
+                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success shadow-sm px-4">Create Genre</button>
+                <a asp-controller="Genre" asp-action="Index" class="btn btn-outline-secondary shadow-sm px-4">Back To Genres</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

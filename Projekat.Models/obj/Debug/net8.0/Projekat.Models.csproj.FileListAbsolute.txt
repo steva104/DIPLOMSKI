@@ -1,0 +1,11 @@
+C:\Projekat\Projekat.Models\bin\Debug\net8.0\Projekat.Models.deps.json
+C:\Projekat\Projekat.Models\bin\Debug\net8.0\Projekat.Models.dll
+C:\Projekat\Projekat.Models\bin\Debug\net8.0\Projekat.Models.pdb
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\Projekat.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\Projekat.Models.AssemblyInfoInputs.cache
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\Projekat.Models.AssemblyInfo.cs
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\Projekat.Models.csproj.CoreCompileInputs.cache
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\Projekat.Models.dll
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\refint\Projekat.Models.dll
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\Projekat.Models.pdb
+C:\Projekat\Projekat.Models\obj\Debug\net8.0\ref\Projekat.Models.dll

@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "ProjekatDotNet\\VinylVibeWeb.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

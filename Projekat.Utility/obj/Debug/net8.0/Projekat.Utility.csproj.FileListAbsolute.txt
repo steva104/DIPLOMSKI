@@ -1,0 +1,11 @@
+C:\Projekat\Projekat.Utility\bin\Debug\net8.0\Projekat.Utility.deps.json
+C:\Projekat\Projekat.Utility\bin\Debug\net8.0\Projekat.Utility.dll
+C:\Projekat\Projekat.Utility\bin\Debug\net8.0\Projekat.Utility.pdb
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\Projekat.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\Projekat.Utility.AssemblyInfoInputs.cache
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\Projekat.Utility.AssemblyInfo.cs
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\Projekat.Utility.csproj.CoreCompileInputs.cache
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\Projekat.Utility.dll
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\refint\Projekat.Utility.dll
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\Projekat.Utility.pdb
+C:\Projekat\Projekat.Utility\obj\Debug\net8.0\ref\Projekat.Utility.dll
